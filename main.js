@@ -1,7 +1,7 @@
 //Define Global Variables
 var city = document.querySelectorAll('#city-name p span');
 
-var clim = document.querySelectorAll('#climate p span');
+var clime = document.querySelectorAll('#climate p span');
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -12,9 +12,10 @@ xmlhttp.onreadystatechange = function() {
 var name = document.createTextNode(apiResult.name);
 city[0].appendChild(name);
 
-console.log(apiResult);
-var main = document.createTextNode(apiResult.main);
-clim[0].appendChild(main);
+console.log(apiResult.weather);
+var weather = document.createTextNode(apiResult.weather);
+clime[0].appendChild(weather);
+
  }
 };
 xmlhttp.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=94103,us&appid=6efff70fe1477748e31c17d1c504635f', true);
